@@ -4,12 +4,11 @@
 
 Following are steps to attach files to volumes to which can be accessed by containers:
 
+1: Create a charts folder in the root directory of your project and create two folders inside it
+    -  One folder to store the files which need to be attached to the volume (We will name it as ```files``` for now.)
+    -  One folder to store the helm charts (We will name it as ```templates```)
 
- 1. Create a charts folder in the root directory of your project and create two folders inside it
--  One folder to store the files which need to be attached to the volume (We will name it as ```files``` for now.)
--  One folder to store the helm charts (We will name it as ```templates```)
-
- 2. Create the base helm chart (name it as ```Chart.yaml``` inside the charts folder). The contents will be as follows:
+2: Create the base helm chart (name it as ```Chart.yaml``` inside the charts folder). The contents will be as follows:
 
      ```
      apiVersion: v1
@@ -19,7 +18,7 @@ Following are steps to attach files to volumes to which can be accessed by conta
     version: 0.1.0
     ```
 
-* Step 3: Now create a ```configmap.yaml``` file inside the templates folder which contains the helm chart as follows:
+ 3: Now create a ```configmap.yaml``` file inside the templates folder which contains the helm chart as follows:
 
     ```
     apiVersion: v1
@@ -40,10 +39,10 @@ Your folder structure would look something like this:
      - example2.json
   > templates
     - configmap.yaml
-  - Chart.yaml
+ 4. Chart.yaml
   ```
 
-* Step 4: Create some sample files (can be of any type – in this case we create some json files) inside the ‘files‘ folder and then define the data property in the config map to load all the files present in the files folder.
+  4: Create some sample files (can be of any type – in this case we create some json files) inside the ‘files‘ folder and then define the data property in the config map to load all the files present in the files folder.
 
     ```
     apiVersion: v1
@@ -63,7 +62,7 @@ Your folder structure would look something like this:
 
 The Glob type allows us to read multiple files as mentioned in the helm [documentation](https://github.com/helm/helm/blob/master/docs/chart_template_guide/accessing_files.md)
 
-* Step 5: Run the command to check if it loads the data from the json files correctly
+  5: Run the command to check if it loads the data from the json files correctly
 ```helm install charts/ --dry-run --debug```.
 You should be able to see the data from the json files loaded in the output as follows:
 ```
