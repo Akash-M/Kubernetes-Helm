@@ -100,3 +100,5 @@ data:
       "details": "This is another example json file"
     }
    ```
+
+  The code can be checked out from the [source-code](https://github.com/Akash-M/Kubernetes-Helm/tree/master/Loading_Multiple_Files/source-code/charts) folder
