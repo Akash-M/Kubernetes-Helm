@@ -2,8 +2,6 @@
 
 ## Loading multiple files :
 
-Following are steps to attach files to volumes to which can be accessed by containers:
-
 1: Create a charts folder in the root directory of your project and create two folders inside it
     -  One folder to store the files which need to be attached to the volume (We will name it as ```files``` for now.)
     -  One folder to store the helm charts (We will name it as ```templates```)
