@@ -39,7 +39,7 @@ Your folder structure would look something like this:
      - example2.json
   > templates
     - configmap.yaml
- 4. Chart.yaml
+  - Chart.yaml
   ```
 
   4: Create some sample files (can be of any type – in this case we create some json files) inside the ‘files‘ folder and then define the data property in the config map to load all the files present in the files folder.
