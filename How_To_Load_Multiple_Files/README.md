@@ -9,7 +9,7 @@
 2: Create the base helm chart (name it as ```Chart.yaml``` inside the charts folder). The contents will be as follows:
 
      ```
-     apiVersion: v1
+    apiVersion: v1
     appVersion: "1.0"
     description: A Helm chart for Kubernetes
     name: sample_project
